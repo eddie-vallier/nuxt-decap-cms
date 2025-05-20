@@ -1,8 +1,8 @@
 {
-  "name": "my-module",
+  "name": "nuxt-decap-cms",
   "version": "1.0.0",
-  "description": "My new Nuxt module",
-  "repository": "your-org/my-module",
+  "description": "Nuxt Decap CMS is an unofficial Nuxt module designed to seamlessly integrate Decap CMS (formerly Netlify CMS) into any Nuxt project. It aims for smooth compatibility with Nuxt Content, provides live preview capabilities for edited content, and supports automatic integration of stateless components.",
+  "repository": "your-org/nuxt-decap-cms",
   "license": "MIT",
   "type": "module",
   "exports": {

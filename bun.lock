@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "my-module",
+      "name": "nuxt-decap-cms",
       "dependencies": {
         "@nuxt/kit": "^3.17.3",
       },
