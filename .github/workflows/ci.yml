@@ -21,6 +21,12 @@ jobs:
 
       - run: npm i -g --force corepack@latest && corepack enable
 
+      - name: Install Bun
+        run: curl -fsSL https://bun.sh/install | bash
+
+      - name: Add Bun to PATH
+        run: echo "$HOME/.bun/bin" >> $GITHUB_PATH
+
       - name: Install dependencies
         run: npx nypm@latest i --agent=bun
 
@@ -38,6 +44,12 @@ jobs:
           node-version: 20
 
       - run: npm i -g --force corepack@latest && corepack enable
+
+      - name: Install Bun
+        run: curl -fsSL https://bun.sh/install | bash
+
+      - name: Add Bun to PATH
+        run: echo "$HOME/.bun/bin" >> $GITHUB_PATH
 
       - name: Install dependencies
         run: npx nypm@latest i --agent=bun
