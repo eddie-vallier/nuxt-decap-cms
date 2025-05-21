@@ -1,3 +1,6 @@
+import { defineEventHandler, setResponseHeaders } from 'h3'
+import { useRuntimeConfig } from '#imports'
+
 export default defineEventHandler((event) => {
   setResponseHeaders(event, {
     'Content-Type': 'text/html',
