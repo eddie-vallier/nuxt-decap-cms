@@ -10,4 +10,11 @@ export default defineNuxtConfig({
     '@nuxt/test-utils',
     '@nuxt/ui',
   ],
+  decapCms: {
+    backend: {
+      name: 'github',
+      repo: 'eddie-vallier/nuxt-decap-cms',
+    },
+    collections: [],
+  },
 })
