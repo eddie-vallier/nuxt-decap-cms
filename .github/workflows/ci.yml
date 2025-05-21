@@ -1,17 +1,13 @@
-name: ci
+name: CI
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
 
 jobs:
-  lint:
+  ci-checks:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
@@ -19,31 +15,25 @@ jobs:
         with:
           node-version: 20
 
-      - run: npm i -g --force corepack@latest && corepack enable
+      - run: npm i -g corepack@latest && corepack enable
+
+      - name: Install Bun
+        run: curl -fsSL https://bun.sh/install | bash
+
+      - name: Add Bun to PATH
+        run: echo "$HOME/.bun/bin" >> $GITHUB_PATH
 
       - name: Install dependencies
-        run: npx nypm@latest i
+        run: bun install
 
       - name: Lint
-        run: npm run lint
+        run: bun run lint
 
-  test:
-    runs-on: ubuntu-latest
+      - name: Prepare Nuxt playground
+        run: bun run dev:prepare
 
-    steps:
-      - uses: actions/checkout@v4
+      - name: Type check
+        run: bun run test:types
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - run: npm i -g --force corepack@latest && corepack enable
-
-      - name: Install dependencies
-        run: npx nypm@latest i
-
-      - name: Playground prepare
-        run: npm run dev:prepare
-
-      - name: Test
-        run: npm run test
+      - name: Run tests
+        run: bun run test
