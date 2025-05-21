@@ -29,6 +29,9 @@ jobs:
       - name: Lint
         run: bun run lint
 
+      - name: Prepare Nuxt playground
+        run: bun run dev:prepare
+
       - name: Type check
         run: bun run test:types
 
