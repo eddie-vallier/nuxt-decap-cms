@@ -27,7 +27,8 @@
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
-    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "release": "changeset publish",
+    "version": "changeset version && changelogen",
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest watch",
@@ -37,6 +38,7 @@
     "@nuxt/kit": "^3.17.3"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.29.4",
     "@nuxt/content": "3.5.1",
     "@nuxt/devtools": "^2.4.1",
     "@nuxt/eslint": "1.4.1",
