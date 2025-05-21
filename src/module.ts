@@ -1,19 +1,28 @@
-import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
-
-// Module options TypeScript interface definition
-export interface ModuleOptions {}
+import { defineNuxtModule, createResolver, addServerHandler } from '@nuxt/kit'
+import { moduleOptionsSchema, type ModuleOptions } from './types'
+import resolveOptions from './utils/resolve-options'
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'nuxt-decap-cms',
-    configKey: 'myModule',
+    configKey: 'decapCms',
   },
-  // Default configuration options of the Nuxt module
-  defaults: {},
-  setup(_options, _nuxt) {
-    const resolver = createResolver(import.meta.url)
+  defaults: moduleOptionsSchema.safeParse({}).data,
+  async setup(_options, _nuxt) {
+    const { resolve } = createResolver(import.meta.url)
 
-    // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
-    addPlugin(resolver.resolve('./runtime/plugin'))
+    const options = await resolveOptions(_options, _nuxt)
+
+    _nuxt.options.runtimeConfig.decapCms = options
+
+    addServerHandler({
+      route: `${options.route}`,
+      handler: resolve('./runtime/index.get'),
+    })
+
+    addServerHandler({
+      route: `${options.route}/config.yml`,
+      handler: resolve('./runtime/config.get'),
+    })
   },
 })
