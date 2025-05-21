@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/setup-node@v4
         with:
@@ -42,6 +45,15 @@ jobs:
       - name: Build
         run: bun run prepack
 
+      - name: Configure Git user
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Set remote with PAT token for push
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/eddie-vallier/nuxt-decap-cms.git
+
       - name: Bump version and generate changelog
         run: bun run version
         env:
@@ -54,7 +66,7 @@ jobs:
         run: |
           git add -A
           git commit -m "chore(release): version bump & changelog" || echo "No changes to commit"
-          git push
+          git push origin main --follow-tags
 
       - name: Publish to npm
         run: bun run release
