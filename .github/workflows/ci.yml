@@ -22,7 +22,7 @@ jobs:
       - run: npm i -g --force corepack@latest && corepack enable
 
       - name: Install dependencies
-        run: npx nypm@latest i
+        run: npx nypm@latest i --agent=npm
 
       - name: Lint
         run: npm run lint
@@ -40,7 +40,7 @@ jobs:
       - run: npm i -g --force corepack@latest && corepack enable
 
       - name: Install dependencies
-        run: npx nypm@latest i
+        run: npx nypm@latest i --agent=npm
 
       - name: Playground prepare
         run: npm run dev:prepare
