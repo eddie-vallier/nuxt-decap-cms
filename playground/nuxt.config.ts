@@ -15,7 +15,7 @@ export default defineNuxtConfig({
           depth: 100,
           summary: '{{title}}',
         },
-        folder: 'content/pages',
+        folder: 'playground/content/pages',
         format: 'frontmatter',
         create: true,
         editor: {
