@@ -5,7 +5,7 @@
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
-Nuxt Decap CMS is an unofficial Nuxt module designed to seamlessly integrate Decap CMS (formerly Netlify CMS) into any Nuxt project. It aims for smooth compatibility with Nuxt Content, provides live preview capabilities for edited content, and supports automatic integration of stateless components. for doing amazing things.
+Nuxt Decap CMS is an unofficial Nuxt module designed to seamlessly integrate Decap CMS (formerly Netlify CMS) into any Nuxt project. It aims for smooth compatibility with Nuxt Content, provides live preview capabilities for edited content, and supports automatic integration of stateless components.
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
 <!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/nuxt-decap-cms?file=playground%2Fapp.vue) -->
