@@ -1,4 +1,4 @@
-import { defineNuxtModule, createResolver, addServerHandler } from '@nuxt/kit'
+import { defineNuxtModule, createResolver, addServerHandler, addPrerenderRoutes } from '@nuxt/kit'
 import { moduleOptionsSchema, type ModuleOptions } from './types'
 import resolveOptions from './utils/resolve-options'
 
@@ -24,5 +24,7 @@ export default defineNuxtModule<ModuleOptions>({
       route: `${options.route}/config.yml`,
       handler: resolve('./runtime/config.get'),
     })
+
+    addPrerenderRoutes([options.route, `${options.route}/config.yml`])
   },
 })
