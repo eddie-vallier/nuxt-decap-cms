@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+@plugin "@tailwindcss/typography";
+.prose {
+  font-family: PublicSans, sans-serif;
+}

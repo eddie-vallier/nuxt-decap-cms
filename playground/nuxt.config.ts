@@ -1,6 +1,14 @@
 export default defineNuxtConfig({
-  modules: ['../src/module'],
+  modules: [
+    '../src/module',
+    '@nuxt/content',
+    '@nuxt/ui',
+    'nuxt-svgo',
+    '@nuxt/fonts',
+    '@pinia/nuxt',
+  ],
   devtools: { enabled: true },
+  css: ['~/assets/css/main.css'],
   decapCms: {
     backend: {
       name: 'github',

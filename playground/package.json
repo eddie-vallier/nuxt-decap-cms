@@ -8,6 +8,15 @@
     "generate": "nuxi generate"
   },
   "dependencies": {
-    "nuxt": "^3.17.3"
+    "@nuxt/fonts": "0.11.4",
+    "@nuxtjs/tailwindcss": "7.0.0-beta.0",
+    "@pinia/nuxt": "0.11.0",
+    "nuxt": "^3.17.3",
+    "nuxt-svgo": "4.2.1",
+    "pinia": "^3.0.2",
+    "vue": ">=3.2.13"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16"
   }
 }
