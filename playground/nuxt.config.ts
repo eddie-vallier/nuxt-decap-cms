@@ -6,9 +6,23 @@ export default defineNuxtConfig({
     'nuxt-svgo',
     '@nuxt/fonts',
     '@pinia/nuxt',
+    '@nuxtjs/mdc',
   ],
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
+  routeRules: {
+    '/': {
+      prerender: true,
+    },
+  },
+  nitro: {
+    prerender: {
+      crawlLinks: false, // Remove when clean links !
+      routes: [
+        '/',
+      ],
+    },
+  },
   decapCms: {
     backend: {
       name: 'github',

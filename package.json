@@ -39,7 +39,11 @@
     "generate": "nuxt generate playground"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.17.3"
+    "@nuxt/kit": "^3.17.4",
+    "@pinia/nuxt": "^0.11.0",
+    "@tailwindcss/typography": "^0.5.16",
+    "nuxt-svgo": "^4.2.1",
+    "tailwindcss": "^4.1.8"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.4",
@@ -51,17 +55,18 @@
     "@nuxt/icon": "1.13.0",
     "@nuxt/image": "1.10.0",
     "@nuxt/module-builder": "^1.0.1",
-    "@nuxt/schema": "^3.17.3",
+    "@nuxt/schema": "^3.17.4",
     "@nuxt/scripts": "0.11.7",
     "@nuxt/test-utils": "^3.19.0",
     "@nuxt/ui": "3.1.2",
+    "@nuxtjs/mdc": "0.17.0",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "latest",
     "@unhead/vue": "^2.0.3",
     "changelogen": "^0.6.1",
     "eslint": "^9.27.0",
     "js-yaml": "^4.1.0",
-    "nuxt": "^3.17.3",
+    "nuxt": "^3.17.4",
     "typescript": "~5.8.3",
     "vitest": "^3.1.4",
     "vue-tsc": "^2.2.10"

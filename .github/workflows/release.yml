@@ -18,32 +18,25 @@ jobs:
         with:
           node-version: 20
           registry-url: 'https://registry.npmjs.org/'
-
-      - run: npm i -g corepack@latest && corepack enable
-
-      - name: Install Bun
-        run: curl -fsSL https://bun.sh/install | bash
-
-      - name: Add Bun to PATH
-        run: echo "$HOME/.bun/bin" >> $GITHUB_PATH
+          cache: 'npm'
 
       - name: Install dependencies
-        run: bun install
+        run: npm install
 
       - name: Lint
-        run: bun run lint
+        run: npm run lint
 
       - name: Prepare Nuxt playground
-        run: bun run dev:prepare
+        run: npm run dev:prepare
 
       - name: Test
-        run: bun run test
+        run: npm run test
 
       - name: Type check
-        run: bun run test:types
+        run: npm run test:types
 
       - name: Build
-        run: bun run prepack
+        run: npm run prepack
 
       - name: Configure Git user
         run: |
@@ -55,7 +48,7 @@ jobs:
           git remote set-url origin https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/eddie-vallier/nuxt-decap-cms.git
 
       - name: Bump version and generate changelog
-        run: bun run version
+        run: npm run version
         env:
           GIT_AUTHOR_NAME: github-actions[bot]
           GIT_AUTHOR_EMAIL: github-actions[bot]@users.noreply.github.com
@@ -69,6 +62,6 @@ jobs:
           git push origin main --follow-tags
 
       - name: Publish to npm
-        run: bun run release
+        run: npm run release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

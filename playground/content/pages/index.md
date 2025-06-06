@@ -1,11 +1,13 @@
 ::hero
-#first-line
+#firstLine
 Decap CMS for
-#second-line
+#secondLine
 Nuxt Applications
 #subtitle
 Seamlessly integrate Decap CMS into any Nuxt project.
-#default
+
 ::copy
+More default content wrapped in a <copy> component.
 ::
 ::
+
