@@ -1,6 +1,9 @@
 <template>
   <div class="flex gap-1 h-full items-center font-bold text-xl justify-center md:justify-start">
-    <NuxtLink to="/" class="flex items-center gap-1">
+    <NuxtLink
+      to="/"
+      class="flex items-center gap-1"
+    >
       <NuxtLogo
         :filled="true"
       />

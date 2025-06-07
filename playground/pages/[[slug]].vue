@@ -2,8 +2,6 @@
 const route = useRoute()
 const path = `/${['pages', ...route.path.split('/')].filter(Boolean).join('/')}`
 
-console.log('PATH', path)
-
 const { data, error } = await useAsyncData(`page-${path.replace('/', '-')}`, () =>
   queryCollection('pages').path(path).first(),
 )
