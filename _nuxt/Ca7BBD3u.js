@@ -1,0 +1,1 @@
+import{_ as a,s as t,o as c,w as e,b as r,cO as s}from"./h9-IVadl.js";import{_ as i}from"./CQF-nnBj.js";const _={};function p(l,m){const o=s,n=i;return c(),t(n,{icon:"i-ph:terminal",value:"npx nuxi module add fonts",disabled:""},{trailing:e(()=>[r(o,{icon:"i-ph:copy",color:"neutral",variant:"link","aria-label":"Copy"})]),_:1})}const u=a(_,[["render",p]]);export{u as default};
