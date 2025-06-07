@@ -9,6 +9,9 @@ export default defineNuxtConfig({
     '@nuxtjs/mdc',
   ],
   devtools: { enabled: true },
+  app: {
+    baseURL: '/nuxt-decap-cms/',
+  },
   css: ['~/assets/css/main.css'],
   routeRules: {
     '/': {
