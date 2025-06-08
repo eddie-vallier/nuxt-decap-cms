@@ -1,9 +1,13 @@
 <script setup lang="ts">
 import type { NavigationMenuItem } from '@nuxt/ui'
 
+const route = useRoute()
 const { data } = await useAsyncData('navigationMenu', () => queryCollection('navigationMenu').all())
 
-const items = ref<NavigationMenuItem[]>(data.value ?? [])
+const items = computed<NavigationMenuItem[]>(() => data.value.map(item => ({
+  ...item,
+  active: route.path == item.to,
+})) ?? [])
 </script>
 
 <template>

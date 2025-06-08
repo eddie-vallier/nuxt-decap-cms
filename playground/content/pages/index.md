@@ -5,9 +5,5 @@ Decap CMS for
 Nuxt Applications
 #subtitle
 Seamlessly integrate Decap CMS into any Nuxt project.
-
-::copy
-More default content wrapped in a <copy> component.
-::
 ::
 

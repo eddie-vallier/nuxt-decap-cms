@@ -12,7 +12,6 @@ export default defineContentConfig({
       schema: z.object({
         label: z.string(),
         icon: z.string().optional(),
-        active: z.boolean().optional(),
         to: z.string().optional(),
         target: z.string(),
         children: z.array(
