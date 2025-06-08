@@ -14,26 +14,19 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-
-      - run: npm i -g corepack@latest && corepack enable
-
-      - name: Install Bun
-        run: curl -fsSL https://bun.sh/install | bash
-
-      - name: Add Bun to PATH
-        run: echo "$HOME/.bun/bin" >> $GITHUB_PATH
+          cache: 'npm'
 
       - name: Install dependencies
-        run: bun install
+        run: npm install
 
       - name: Lint
-        run: bun run lint
+        run: npm run lint
 
       - name: Prepare Nuxt playground
-        run: bun run dev:prepare
+        run: npm run dev:prepare
 
       - name: Type check
-        run: bun run test:types
+        run: npm run test:types
 
       - name: Run tests
-        run: bun run test
+        run: npm run test

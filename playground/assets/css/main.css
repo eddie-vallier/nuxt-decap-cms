@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+@plugin "@tailwindcss/typography";
+
+.prose {
+  font-family: PublicSans, sans-serif;
+}
+
+.prose h2 > a,
+.prose h3 > a {
+  text-decoration: none;
+}

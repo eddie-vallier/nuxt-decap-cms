@@ -1,6 +1,31 @@
 export default defineNuxtConfig({
-  modules: ['../src/module'],
+  modules: [
+    '../src/module',
+    '@nuxt/content',
+    '@nuxt/ui',
+    'nuxt-svgo',
+    '@nuxt/fonts',
+    '@pinia/nuxt',
+    '@nuxtjs/mdc',
+  ],
   devtools: { enabled: true },
+  app: {
+    baseURL: '/nuxt-decap-cms/',
+  },
+  css: ['~/assets/css/main.css'],
+  routeRules: {
+    '/': {
+      prerender: true,
+    },
+  },
+  nitro: {
+    prerender: {
+      crawlLinks: false, // Remove when clean links !
+      routes: [
+        '/',
+      ],
+    },
+  },
   decapCms: {
     backend: {
       name: 'github',

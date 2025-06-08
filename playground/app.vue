@@ -1,8 +1,7 @@
 <template>
-  <div>
-    Nuxt module playground!
-  </div>
+  <UApp>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </UApp>
 </template>
-
-<script setup>
-</script>
