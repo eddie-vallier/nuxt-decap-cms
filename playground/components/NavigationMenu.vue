@@ -4,7 +4,7 @@ import type { NavigationMenuItem } from '@nuxt/ui'
 const route = useRoute()
 const { data } = await useAsyncData('navigationMenu', () => queryCollection('navigationMenu').all())
 
-const items = computed<NavigationMenuItem[]>(() => data.value.map(item => ({
+const items = computed<NavigationMenuItem[]>(() => data.value?.map(item => ({
   ...item,
   active: route.path == item.to,
 })) ?? [])
