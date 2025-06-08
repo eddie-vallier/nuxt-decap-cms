@@ -1,5 +1,11 @@
 # nuxt-decap-cms
 
+## 1.2.0
+
+### Minor Changes
+
+- ba2ee0e: Add playground as github page for documentation
+
 ## 1.1.0
 
 ### Minor Changes
