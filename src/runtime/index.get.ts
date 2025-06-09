@@ -15,6 +15,7 @@ export default defineEventHandler((event) => {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Manager</title>
+    <link href="${options.route}/config.yml" type="text/yaml" rel="cms-config-url">
     <!-- Include the script that enables Netlify Identity on this page. -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>

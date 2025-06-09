@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     'nuxt-svgo',
     '@nuxt/fonts',
-    '@pinia/nuxt',
+    // '@pinia/nuxt',
     '@nuxtjs/mdc',
   ],
   devtools: { enabled: true },
@@ -18,18 +18,16 @@ export default defineNuxtConfig({
       prerender: true,
     },
   },
-  nitro: {
-    prerender: {
-      crawlLinks: false, // Remove when clean links !
-      routes: [
-        '/',
-      ],
+  vite: {
+    optimizeDeps: {
+      include: ['debug'],
     },
   },
   decapCms: {
     backend: {
       name: 'github',
       repo: 'eddie-vallier/nuxt-decap-cms',
+      site_url: 'https://eddie-vallier.github.io/nuxt-decap-cms',
     },
     collections: [
       {

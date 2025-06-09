@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
   const { decapCms: options } = useRuntimeConfig()
 
   setResponseHeaders(event, {
-    'Content-Type': 'application/x-yaml',
+    'Content-Type': 'application/yaml',
   })
 
   return yaml.dump(options, { noRefs: true })
