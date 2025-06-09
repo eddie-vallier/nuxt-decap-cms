@@ -34,6 +34,7 @@ const backendSchema = z.object({
   name: z.string(),
   repo: z.string(),
   branch: z.string().default('main'),
+  site_url: z.string().default(''),
 })
 
 export const moduleOptionsSchema = z.object({

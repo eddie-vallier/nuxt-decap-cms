@@ -1,4 +1,4 @@
-import { defineNuxtModule, createResolver, addServerHandler, addPrerenderRoutes } from '@nuxt/kit'
+import { defineNuxtModule, createResolver, addServerHandler, addPrerenderRoutes, extendPages } from '@nuxt/kit'
 import { moduleOptionsSchema, type ModuleOptions } from './types'
 import resolveOptions from './utils/resolve-options'
 
@@ -23,6 +23,14 @@ export default defineNuxtModule<ModuleOptions>({
     addServerHandler({
       route: `${options.route}/config.yml`,
       handler: resolve('./runtime/config.get'),
+    })
+
+    extendPages((pages) => {
+      pages.unshift({
+        name: 'decap-preview',
+        path: `${options.route}/preview`,
+        file: resolve('runtime/DecapPreview.vue'),
+      })
     })
 
     addPrerenderRoutes([options.route, `${options.route}/config.yml`])
