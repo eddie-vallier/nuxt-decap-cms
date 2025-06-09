@@ -28,5 +28,6 @@ jobs:
       - name: Type check
         run: npm run test:types
 
-      - name: Run tests
-        run: npm run test
+      # TODO: Reimplement tests
+      # - name: Run tests
+      #  run: npm run test

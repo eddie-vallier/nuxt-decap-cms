@@ -2,6 +2,7 @@ import DecapCms from '../../../src/module'
 
 export default defineNuxtConfig({
   modules: [
+    '@nuxtjs/mdc', // TODO: Should be auto-imported by the module
     DecapCms,
   ],
   decapCms: {
